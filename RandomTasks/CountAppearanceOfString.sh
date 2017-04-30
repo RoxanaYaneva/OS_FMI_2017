@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "Enter a string to search in all files: "
+echo -n "Enter a string to search in all files: "
 read string
 for file in $(ls)
 do
-	echo "$file has encountered string $string $(cat $file | grep $string | wc -l) times in it"
+	echo "${file} has encountered string ${string} $(cat ${file} | grep ${string} | wc -l) time(s) in it."
 done
 
