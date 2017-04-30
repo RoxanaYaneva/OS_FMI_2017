@@ -1,30 +1,32 @@
 #!/bin/bash
 
-regularFiles=0
-blockFiles=0
-characterFiles=0
+regular_files=0
+block_files=0
+character_files=0
 dirs=0
 
-for item in $(ls)
+ls=$(ls)
+
+for item in ${ls} 
 do
-	if [ -f $item ]
+	if [ -f "${item}" ]
 	then 
-		regularFiles=$(($regularFiles+1))
-	elif [ -b $item ]
+		regular_files=$((${regular_files}+1))
+	elif [ -b "${item}" ]
 	then
-		blockFiles=$(($blockFiles+1))
-	elif [ -c $item ]
+		block_files=$((${block_files}+1))
+	elif [ -c "${item}" ]
 	then
-		characterFiles=$((characterFiles+1))
-	elif [ -d $item ]
+		character_files=$((${character_files}+1))
+	elif [ -d ${item} ]
 	then
-		dirs=$(($dirs+1))
+		dirs=$((${dirs}+1))
 	fi
 done
 
-echo "Regular files: $regularFiles"
-echo "Block files: $blockFiles"
-echo "Character files: $characterFiles"
-echo "Dirs: $dirs"
+echo "Regular files: ${regular_files}."
+echo "Block files: ${block_files}."
+echo "Character files: ${character_files}."
+echo "Directories: ${dirs}."
 
 
