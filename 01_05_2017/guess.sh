@@ -2,7 +2,6 @@
 
 a=${1}
 b=${2}
-
 cnt=1
 
 if [ ${a} -lt ${b} ] ; then 
@@ -15,6 +14,7 @@ number=$(( (RANDOM % ${b}) + ${a} ))
 
 echo -n "Guess? "
 read guess
+
 while [ ${guess} -ne ${number} ] 
 do
 	let cnt=${cnt}+1
@@ -28,3 +28,4 @@ do
 done
 
 echo "RIGHT! Guessed ${number} in ${cnt} tries!"
+
