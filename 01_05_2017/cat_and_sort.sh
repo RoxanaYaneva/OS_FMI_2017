@@ -1,12 +1,11 @@
 #!/bin/bash
 
-echo -n "Enter names of three files: "
-read file1 file2 file3
+read -p "Enter names of three files: " FILE1 FILE2 FILE3
 
-if [ ! -f "${file1}" ] || [ ! -f "${file2}" ] || [ ! -f "${file3}" ] ; then
+if [ ! -f "${FILE1}" ] || [ ! -f "${FILE2}" ] || [ ! -f "${FILE3}" ] ; then
 	echo "Invalid arguments."
 	exit 1
 fi
 
-cat "${file1}" "${file2}" | sort > "${file3}"
+cat "${FILE1}" "${FILE2}" | sort > "${FILE3}"
 

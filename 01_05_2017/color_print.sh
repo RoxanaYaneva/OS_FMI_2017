@@ -1,25 +1,25 @@
 #!/bin/bash
 
-color="${1}"
-string="${2}"
+COLOR="${1}"
+STRING="${2}"
 
-if [ "${color}" != "-r" ] || [ "${color}" != "-g" ] || [ "${color}" != "-b" ] ; then
-	color=""
-	string=("$@")
+if [ "${COLOR}" != "-r" ] || [ "${COLOR}" != "-g" ] || [ "${COLOR}" != "-b" ] ; then
+	COLOR=""
+	STRING=("$@")
 fi
 
-case "${color}" in
+case "${COLOR}" in
 	"-r")	
-		echo -e "\033[0;31m${string}"
+		echo -e "\033[0;31m${STRING}"
 		;;
 	"-g")
-		echo -e "\033[0;32m${string}"
+		echo -e "\033[0;32m${STRING}"
 		;;
 	"-b")
-		echo -e "\033[0;34m${string}"
+		echo -e "\033[0;34m${STRING}"
 		;;
 	  "")
-		echo "${string}"
+		echo "${STRING}"
 		;;
 	   *)
 		echo "Unknown color."

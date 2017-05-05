@@ -1,31 +1,30 @@
 #!/bin/bash
 
-a=${1}
-b=${2}
-cnt=1
+A=${1}
+B=${2}
+CNT=1
 
-if [ ${a} -lt ${b} ] ; then 
+if [ ${A} -lt ${B} ] ; then 
 	echo "Ok!"
 else
 	echo "Not ok!"
 fi
 
-number=$(( (RANDOM % ${b}) + ${a} ))
+NUMBER=$(( (RANDOM % ${B}) + ${A} ))
 
 echo -n "Guess? "
-read guess
+read GUESS
 
-while [ ${guess} -ne ${number} ] 
-do
-	let cnt=${cnt}+1
-	if [ ${guess} -lt ${number} ] ; then
-		echo ...bigger!
+while [ ${GUESS} -ne ${NUMBER} ] ; do
+	let CNT=${CNT}+1
+	if [ ${GUESS} -lt ${NUMBER} ] ; then
+		echo ...Bigger!
 	else
 		echo ...smaller!
 	fi
-	echo -n "Guess again? "
-	read guess
+	echo -n "Guess Again? "
+	read GUESS
 done
 
-echo "RIGHT! Guessed ${number} in ${cnt} tries!"
+echo "RIGHT! Guessed ${NUMBER} in ${CNT} tries!"
 
