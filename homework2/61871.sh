@@ -10,7 +10,7 @@ function convert_to_spec_name {
         if [[ "${1}" -eq "${1}" ]] ; then
 		DATE=$(date -d @"${1}" +%Y-%m-%dT%H%M_)
 	fi
-        DESCRIPTION=$(echo "${2}" | tr -cd '[0-9a-zA-Z\ ]' | tr ' ' '_' | tr '[:upper:]' '[:lower:]')
+        DESCRIPTION=$(echo "${2}" | tr -cd '[0-9a-zA-Z ]' | tr ' ' '_' | tr '[:upper:]' '[:lower:]')
         FILE_NAME="${DATE}${DESCRIPTION}.jpg"
         echo "${FILE_NAME}" | tr -s '_'
 }
