@@ -57,7 +57,7 @@ int main(int argc, char* argv[]){
 }
 
 void write_to_output(int input, int output, char* symbol) {
-	while(read(input, symbol, 1)) {
+	while(read(input, symbol, 1) > 0) {
 		write(output, symbol, 1);
 	}
 }
