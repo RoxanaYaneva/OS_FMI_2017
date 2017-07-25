@@ -33,3 +33,4 @@ done < <(find "${CURR_DIR}" -type f -print0)
 
 let UNIQ_FILES=${UNIQ_FILES}+${CURR_UNIQ_FILES}
 echo "Number of files with unique content is: ${UNIQ_FILES}"
+
